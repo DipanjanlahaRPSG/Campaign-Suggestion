@@ -47,6 +47,7 @@ Recent decisions affecting current work:
 
 - [Phase 1]: Start with data quality and reusable workspace assets before AI/delivery layers.
 - [Phase 4]: Place predictive scoring and continuous learning after live delivery/measurement to avoid training-loop gaps.
+- [Global]: No platform purchase dependency; build and operate our own model capabilities.
 
 ### Pending Todos
 

@@ -7,7 +7,7 @@
 
 ## Executive Summary
 
-This product is best built as a **hybrid AI campaign system**: use proven messaging infrastructure for SMS/WhatsApp delivery and operational workflows, while building proprietary ML assets on top of your historical campaign data. The strongest recommendation across research is to separate responsibilities cleanly: relational operations in Postgres, analytics in ClickHouse (or defer until needed), model pipelines in Python/Prefect, tabular prediction via XGBoost/scikit-learn, and LLM generation with strong guardrails.
+This product is best built as a **custom, in-house AI campaign system**: own the generation/scoring/recommendation intelligence internally while integrating only channel transport APIs needed for SMS/WhatsApp dispatch. The strongest recommendation across research is to separate responsibilities cleanly: relational operations in Postgres, analytics in ClickHouse (or defer until needed), model pipelines in Python/Prefect, tabular prediction via XGBoost/scikit-learn, and LLM generation with strong guardrails.
 
 The recommended approach is **foundation-first, then intelligence, then automation**. Start with ingestion quality, data contracts, and measurable KPIs; then ship a baseline suggestion flow (segment → generate variants → score → dispatch); then close the feedback loop for retraining and A/B-driven improvement. This order aligns with both architecture dependencies and feature maturity, and avoids premature complexity.
 
@@ -67,7 +67,7 @@ Use a layered architecture with strict boundaries: **Data Sources → Ingestion/
 
 ### Critical Pitfalls
 
-1. **Cold start coverage gaps** — mitigate with hybrid fallback logic (similar-campaign retrieval + rule-based baselines) and explicit confidence thresholds.
+1. **Cold start coverage gaps** — mitigate with dual fallback logic (similar-campaign retrieval + rule-based baselines) and explicit confidence thresholds.
 2. **Concept drift/model decay** — implement monitoring and scheduled retraining triggers early; do not treat retraining as optional.
 3. **Hallucinated promotional claims** — enforce fact-base validation + human approval for high-risk campaigns.
 4. **Feedback-loop bias/creative fatigue** — enforce exploration quotas, novelty scoring, and similarity/frequency caps.
@@ -130,7 +130,7 @@ Phases with standard patterns (can usually skip deeper research-phase):
 | Area | Confidence | Notes |
 |------|------------|-------|
 | Stack | HIGH | Grounded in official docs/package registries and clear compatibility guidance. |
-| Features | HIGH | Strong alignment with current CEP/AI campaign market expectations. |
+| Features | HIGH | Strong alignment with current AI campaign market expectations. |
 | Architecture | MEDIUM-HIGH | Solid layered pattern, but some source quality is mixed and one doc suggests heavier tooling than stack recommendation. |
 | Pitfalls | MEDIUM | Risks are credible and common, but several sources are secondary and jurisdiction-specific compliance details remain open. |
 
@@ -152,7 +152,7 @@ Phases with standard patterns (can usually skip deeper research-phase):
 - STACK.md, FEATURES.md, ARCHITECTURE.md, PITFALLS.md (project research artifacts)
 
 ### Secondary (MEDIUM confidence)
-- CEP and martech ecosystem references (Braze/MoEngage/CleverTap/Attentive landscape)
+- Martech ecosystem landscape references (competitive context)
 - Architecture blogs and implementation pattern writeups referenced in ARCHITECTURE.md
 - Recommender/ML operations commentary and drift discussions referenced in PITFALLS.md
 

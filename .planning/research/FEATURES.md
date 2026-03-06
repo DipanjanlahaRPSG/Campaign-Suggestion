@@ -110,7 +110,7 @@ Features to explicitly **NOT build** in Phase 1. These dilute focus, increase co
 | **Multi-Language Generation** | Adds significant complexity; requires multilingual training data | Start with your existing language(s) |
 | **Social Media Integration** | Different engagement patterns, different content formats | Stay focused on SMS/WhatsApp |
 | **Voice/RCS Messaging** | Emerging channels, additional compliance complexity | Defer until channels mature |
-| **Full Journey Orchestration** | Complex workflow building;CEP-level feature | Focus on campaign suggestions, not full journey |
+| **Full Journey Orchestration** | Complex workflow building; enterprise-orchestration-level feature | Focus on campaign suggestions, not full journey |
 | **Creative Asset Generation (Images)** | Requires vision models, different optimization criteria | Text-only for Phase 1 |
 | **Predictive Lead Scoring** | B2B-focused, different data requirements | Your B2C focus = engagement scoring |
 | **Social Listening** | External data, not campaign-centric | Focus on your internal performance data |
@@ -157,7 +157,7 @@ Features to explicitly **NOT build** in Phase 1. These dilute focus, increase co
 ## Sources
 
 - **Market Analysis:** research/market_analysis.md (internal)
-- **Platform Research:** MoEngage Merlin AI, CleverTap Clever.AI, Braze Sage AI, Attentive AI documentation
+- **Competitive Landscape Research:** AI campaign tooling references used for capability benchmarking
 - **Industry Trends:** Pushwoosh AI Marketing Automation 2026, Klaviyo AI SMS Marketing, Neuwark Self-Optimizing Campaigns 2026
 - **Confidence:** HIGH — based on market analysis + current industry research
 

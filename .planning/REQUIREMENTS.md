@@ -54,6 +54,7 @@ Explicitly excluded. Documented to prevent scope creep.
 
 | Feature | Reason |
 |---------|--------|
+| Dependence on paid CEP/platform products for core suggestion intelligence | User decision: build and own the modeling layer in-house |
 | Real-time chat or conversational agent workflows | High complexity and not core to campaign suggestion value |
 | Video or image creative generation | Increases model and storage complexity; v1 is text-focused |
 | Email campaign channels | v1 focus is SMS + WhatsApp only |
@@ -91,4 +92,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-03-05*
-*Last updated: 2026-03-05 after roadmap mapping*
+*Last updated: 2026-03-06 after in-house model strategy update*

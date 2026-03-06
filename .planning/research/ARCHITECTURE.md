@@ -8,7 +8,7 @@
 
 ## Recommended Architecture
 
-This architecture follows the **hybrid approach** recommended in the market analysis — leveraging existing Customer Engagement Platforms (CEPs) while building proprietary ML models that learn from your unique historical campaign performance data.
+This architecture follows a **custom-first approach** — owning proprietary ML models and orchestration in-house so the core intelligence learns directly from your unique historical campaign performance data.
 
 ```mermaid
 graph TD
@@ -115,8 +115,8 @@ graph TD
 | Campaign Suggestion Engine | Combines all ML outputs to recommend: what to say, to whom, when | All ML Models | Delivery Layer |
 
 **Technology Choices:**
-- **CEP Integration:** Use MoEngage, CleverTap, or Braze as the orchestration layer initially (hybrid approach)
-- **Custom Build:** LangGraph or CrewAI for agentic orchestration if building custom
+- **Custom Orchestration Engine:** Build in-house orchestration service (FastAPI service + rules/policy layer)
+- **Optional Workflow Library:** LangGraph for complex multi-step decision flows if needed
 - **RAG Pipeline:** Optional — retrieve historical high-performing messages to ground LLM generation
 
 **Boundary:** This is the brain. It takes raw predictions and transforms them into actionable campaign suggestions. It decides priority, timing, and channel.
@@ -132,7 +132,7 @@ graph TD
 
 **Technology Choices:**
 - **SMS:** Twilio, AWS SNS, or direct carrier integrations
-- **WhatsApp:** WhatsApp Business API (Meta), Twilio, or BSPs like Gupshup/CleverTap
+- **WhatsApp:** WhatsApp Business API (Meta) via direct integration or existing provider contracts
 
 **Boundary:** This layer executes the campaign. It sends and logs delivery status but doesn't decide content.
 
@@ -287,7 +287,7 @@ gantt
 | **Feature Store** | Database tables | Managed feature store (Feast) | Real-time feature serving |
 | **Content Generation** | API calls to GPT-4 | Fine-tuned smaller model + caching | Fine-tuned model deployed |
 | **Segmentation** | Batch clustering (nightly) | Near-real-time updates | Real-time segment scoring |
-| **Campaign Engine** | CEP integration | Hybrid CEP + custom rules | Fully custom orchestration |
+| **Campaign Engine** | In-house rule engine | In-house orchestration + policy rules | Fully custom orchestration |
 | **Delivery** | Single provider | Multi-provider with failover | Distributed delivery |
 
 ---
@@ -309,10 +309,10 @@ gantt
 **Why:** Performance degrades as audience behavior shifts.  
 **Prevention:** Build Phase 4 feedback loop early, even if manual at first.
 
-### 4. Skipping the Hybrid Approach
-**What:** Trying to build everything from scratch.  
-**Why:** Time-to-value is too slow; competitive pressure demands quick wins.  
-**Prevention:** Use CEP for orchestration and delivery; build custom ML for differentiation.
+### 4. Vendor Dependency in Core Intelligence
+**What:** Letting external platforms control recommendation logic and learning loops.  
+**Why:** Creates lock-in and weakens your proprietary data advantage.  
+**Prevention:** Keep generation/scoring/recommendation pipelines fully in-house; use external APIs only for channel transport when unavoidable.
 
 ---
 
@@ -324,7 +324,7 @@ gantt
 |----------------|-----------|---------|
 | **SMS Provider (Twilio)** | Outbound API | Campaign delivery |
 | **WhatsApp Business API** | Outbound API | Campaign delivery |
-| **Customer Data Platform** | Bidirectional | Enrich customer profiles |
+| **CRM / First-Party Profile Store** | Bidirectional | Enrich customer profiles |
 | **Analytics Dashboard** | Outbound | Performance reporting |
 
 ### Internal System Boundaries
@@ -354,7 +354,7 @@ User Input → Campaign Engine → ML Models → Feature Store ← Data Pipeline
 
 | Area | Confidence | Reason |
 |------|------------|--------|
-| Component Boundaries | HIGH | Based on established patterns from CEPs (Braze, MoEngage, CleverTap) and modern ML pipeline architecture |
+| Component Boundaries | HIGH | Based on established modern ML pipeline architecture and clear in-house service boundaries |
 | Data Flow | HIGH | Standard ETL → Feature Store → ML Inference → Feedback loop pattern is well-established |
 | Build Order | MEDIUM | Logical dependency chain, but actual timing depends on team expertise and data quality |
 | Technology Choices | MEDIUM | Recommendations based on current SOTA, but specific tool selection should validate against team skills |

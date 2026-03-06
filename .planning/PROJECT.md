@@ -40,7 +40,7 @@ This project leverages the user's **historical promotional data advantage** — 
 - SMS & WhatsApp-specific AI platforms
 - AI Content Generation tools (Jasper, ChatGPT, Claude)
 - Build vs Buy analysis performed
-- Recommended architecture: Hybrid approach
+- Decision update: no platform purchase dependency; build our own model stack
 
 **Technical Insight from Research:**
 - Fine-tune LLMs on historical message corpus + engagement metrics
@@ -50,18 +50,19 @@ This project leverages the user's **historical promotional data advantage** — 
 
 ## Constraints
 
-- **[Timeline]**: Quick time-to-value preferred — hybrid approach recommended
+- **[Timeline]**: Quick time-to-value preferred, without introducing platform lock-in
 - **[Data]**: Must leverage existing historical campaign data for competitive advantage
 - **[Channels]**: SMS and WhatsApp as primary delivery channels
 - **[Tech Stack]**: ML/AI capabilities required for content generation and scoring
+- **[Build Strategy]**: In-house model development only (no paid CEP dependency)
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Build custom solution | Your data is the differentiator — off-the-shelf tools can't leverage your unique historical performance data | — Pending |
-| Hybrid approach (Phase 1 buy + custom build) | Get quick wins from CEP while building proprietary ML models | — Pending |
+| Build custom solution | Your data is the differentiator — off-the-shelf tools can't leverage your unique historical performance data | ✅ Locked |
+| No platform purchase dependency | Avoid vendor lock-in and keep the learning loop fully tied to first-party data and model behavior | ✅ Locked |
 | Focus on SMS/WhatsApp | Matches existing data channels, reduces complexity | — Pending |
 
 ---
-*Last updated: 2025-03-05 after initialization*
+*Last updated: 2026-03-06 after build-strategy decision update*

@@ -21,7 +21,7 @@ Mistakes that cause rewrites, major issues, or complete system failure.
 - System appears broken for 30-50% of use cases
 - Forces fallback to manual content creation, defeating the purpose
 
-**Prevention:** Build hybrid system that combines collaborative filtering (find similar successful campaigns) with content-based approaches (use product/metadata attributes). Seed initial suggestions with industry benchmarks until enough data accumulates.
+**Prevention:** Build a combined fallback strategy that uses collaborative filtering (find similar successful campaigns) plus content-based approaches (use product/metadata attributes). Seed initial suggestions with internal heuristics and controlled priors until enough first-party data accumulates.
 
 **Detection:** Track "coverage rate" — what % of suggestions have prediction confidence > threshold? Alert when coverage drops below 80%.
 

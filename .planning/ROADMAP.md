@@ -2,7 +2,9 @@
 
 ## Overview
 
-This roadmap delivers campaign suggestion value in a dependency-safe order: first establish trusted campaign data and workspace objects, then ship baseline AI suggestions, then enable real channel execution and measurement, and finally layer in data-trained intelligence with a continuous learning loop.
+This roadmap delivers campaign suggestion value in a dependency-safe order: first establish trusted campaign data and workspace objects, then ship baseline in-house AI suggestions, then enable real channel execution and measurement, and finally layer in historical-data-trained intelligence with a continuous learning loop.
+
+Planning constraint: no paid CEP/platform dependency for core intelligence — model generation/scoring/recommendation capabilities are built in-house.
 
 ## Phases
 
@@ -13,7 +15,7 @@ This roadmap delivers campaign suggestion value in a dependency-safe order: firs
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [ ] **Phase 1: Data & Workspace Foundation** - Import and normalize historical data while enabling campaign, contact, and template management.
-- [ ] **Phase 2: Baseline AI Campaign Suggestions** - Generate AI drafts and produce actionable what/who/when campaign recommendations.
+- [ ] **Phase 2: Baseline AI Campaign Suggestions** - Generate in-house AI drafts and produce actionable what/who/when campaign recommendations.
 - [ ] **Phase 3: Channel Delivery & Measurement** - Execute campaigns via SMS/WhatsApp and measure outcomes with A/B comparisons.
 - [ ] **Phase 4: Historical Intelligence & Learning Loop** - Apply historical-performance intelligence, predictive scoring, and feedback-driven improvement.
 
@@ -31,7 +33,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: TBD
 
 ### Phase 2: Baseline AI Campaign Suggestions
-**Goal**: Users can generate initial AI campaign recommendations that specify what to send, to whom, and when.
+**Goal**: Users can generate initial in-house AI campaign recommendations that specify what to send, to whom, and when.
 **Depends on**: Phase 1
 **Requirements**: GEN-01, SEGM-01, SUGG-01
 **Success Criteria** (what must be TRUE):
